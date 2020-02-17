@@ -15,7 +15,10 @@ ddm_fpt_lib.o: ddm_fpt_lib.cpp ddm_fpt_lib.h
 	$(CC) $(CCFLAGS) -c ddm_fpt_lib.cpp -o $@
 
 ddm_fpt_lib.dylib: ddm_fpt_lib.cpp carlo.cpp
-	$(CC) $(LIB_CCFLAGS) -o $@ ddm_fpt_lib.cpp carlo.cpp 
+	$(CC) $(LIB_CCFLAGS) -o $@ ddm_fpt_lib.cpp carlo.cpp
+
+ddm_fpt_lib.so: ddm_fpt_lib.cpp carlo.cpp
+	$(CC) $(LIB_CCFLAGS) -o $@ ddm_fpt_lib.cpp carlo.cpp
 
 test_ddm_fpt_lib.o: test_ddm_fpt_lib.cpp ddm_fpt_lib.h
 	$(CC) $(CCFLAGS) -c test_ddm_fpt_lib.cpp -o $@
@@ -28,3 +31,6 @@ clean_ddm_fpt_lib:
 
 clean_test_ddm_fpt_lib:
 	rm -rf test_ddm_fpt_lib.o
+
+# on MacOS, run make ddm_fpt_lib.dylib
+# on Linux: make ddm_fpt_lib.so

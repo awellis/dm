@@ -12,7 +12,7 @@ Content
 
 The library provides classes and methods, written in C++11, that on one hand compute the first-passage time densities of diffusion models with two absorbing boundaries, and on the other hand draws first-passage time and boundary samples. Each specialised class inherits the abstract `DMBase` and provides various optimization to compute this density and to sample. The library supports leaky/weighted integration, time-varying drift rates, and time-varying symmetric or asymmetric boundaries.
 
-In addition to the C++11 implementation, a Python and a MATLAB interface are provided. In both cases, the interface chooses between the various different library classes depending on the provided parameters.
+In addition to the C++11 implementation, a Python and a MATLAB interface are provided. In both cases, **the interface chooses between the various different library classes depending on the provided parameters.**
 
 The diffusion models assume a drifting and diffusing particle *x(t)* that starts at *x(0) = 0*and whose time-course follows
 

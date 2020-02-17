@@ -2,8 +2,7 @@
 extern "C" 
 {
   int fpt(double mu,double bound,const double dt,const double tmax,double *g1,double *g2)
-  {
-    ExtArray e_mu(ExtArray::shared_noowner(&mu),1),e_bound(ExtArray::shared_noowner(&bound),1);
+  { ExtArray e_mu(ExtArray::shared_noowner(&mu),1),e_bound(ExtArray::shared_noowner(&bound),1);
     int n_max=(int)ceil(tmax/dt);
     DMBase *dm=DMBase::create(e_mu,e_bound,dt);
     ExtArray e_g1(ExtArray::shared_noowner(g1),n_max),e_g2(ExtArray::shared_noowner(g2),n_max);
